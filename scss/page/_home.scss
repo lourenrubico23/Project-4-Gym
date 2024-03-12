@@ -1,0 +1,110 @@
+@use "../abstract" as *;
+@use "../base" as *;
+@use "../component" as *;
+@use "../layout" as *;
+@use "../vendor" as *;
+
+.banner{
+    &__wrapper{
+        background-color: $clr--light;
+        padding: 4rem 4rem;
+        border-radius:0 0 5rem 5rem ;
+        padding-bottom: 7rem;
+        h1{
+            max-width: 60rem;
+        }
+        .upper{
+            p{
+                opacity: .5;
+            }
+        }
+        .buttons{
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 3rem;
+        }
+        .memberbtn{
+            background-color: $crl--accent;
+            padding:2rem;
+            border-radius: 3rem;
+            color: $clr--light;   
+            height: 6rem;
+        }
+        .memberBtnTrans{
+            padding:2rem;
+            border-radius: 3rem;
+            color: $clr--dark;   
+            height: 6rem;
+            border-width: 2rem;
+            border-color: $crl--accent;
+        }
+       
+    }
+   
+     &__pics{
+        @include unevengrid(1fr 1fr, 5rem);
+        }
+    
+    &__left{
+      
+        p{
+            font-size: 2rem;
+            margin-top: 2rem;
+            color: $clr--dark;
+            
+        }
+    }
+}
+
+.counts{
+    &__wrapper{
+        margin-top: 4rem;
+        background-color: rgba(182, 181, 181, 0.288);
+        padding: 4rem 4rem;
+        border-radius: 10rem ;
+        @include grid(4);
+    }
+    &__list{
+            h2, p{
+                color: $clr--light;
+                margin: 0 2rem 0 2rem;
+            }
+        }
+}
+
+.services{
+    &__title{
+        color: $clr--light;
+        text-align: center;
+        margin: 7rem 0 5rem 0;
+    }
+    &__wrapper{
+        display: flex;
+        background-color: rgba(182, 181, 181, 0.288);
+        padding: 4rem 4rem;
+        border-radius: 5rem ;
+        width: fit-content;
+    }
+    &__details{
+        @include grid(2);
+        h3, p{
+            color: $clr--light;
+        }
+        
+    }
+    &__left{
+            .icon{
+                background-color: $crl--accent;
+                display: inline;
+                padding: 1rem;
+                border-radius: 2rem;
+            }
+        }
+    &__right{
+         position: absolute;
+         left: 145rem;
+        img{
+            @include imgCover(40rem, 30rem);
+        }
+    }
+}
