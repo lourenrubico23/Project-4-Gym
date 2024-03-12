@@ -21,23 +21,23 @@
         .buttons{
             display: flex;
             justify-content: flex-end;
+            align-items: center;
             margin-bottom: 3rem;
-        }
-        .memberbtn{
+            gap: 1rem;
+            .memberbtn{
             background-color: $crl--accent;
-            padding:2rem;
+            padding:1.5rem;
             border-radius: 3rem;
             color: $clr--light;   
-            height: 6rem;
         }
         .memberBtnTrans{
-            padding:2rem;
+            padding:1.5rem;
             border-radius: 3rem;
             color: $clr--dark;   
-            height: 6rem;
-            border-width: 2rem;
-            border-color: $crl--accent;
+            border: solid 1px $crl--accent;
         }
+        }
+        
        
     }
    
@@ -63,11 +63,12 @@
         padding: 4rem 4rem;
         border-radius: 10rem ;
         @include grid(4);
+        @include flex(space-around,center);
     }
     &__list{
             h2, p{
+                
                 color: $clr--light;
-                margin: 0 2rem 0 2rem;
             }
         }
 }
@@ -80,31 +81,35 @@
     }
     &__wrapper{
         display: flex;
+        overflow: hidden;
         background-color: rgba(182, 181, 181, 0.288);
-        padding: 4rem 4rem;
         border-radius: 5rem ;
-        width: fit-content;
+        height: 40rem;
     }
     &__details{
         @include grid(2);
+        padding: 4rem;
         h3, p{
             color: $clr--light;
+            margin: 0;
+        }
+        h3{
+            line-height: normal;
         }
         
     }
     &__left{
+        @include flex(start, start);
+        gap:2rem;
             .icon{
                 background-color: $crl--accent;
-                display: inline;
-                padding: 1rem;
-                border-radius: 2rem;
+                border-radius: 50%;
+                padding: .5rem 1rem;
             }
         }
     &__right{
-         position: absolute;
-         left: 145rem;
         img{
-            @include imgCover(40rem, 30rem);
+            @include imgCover(100%, 70rem);
         }
     }
 }

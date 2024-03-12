@@ -467,7 +467,10 @@ p {
   background: var(--accent);
   border-radius: 4rem;
   padding: 1rem;
-  padding-left: 3rem;
+  width: 12rem;
+  text-align: center;
+}
+.header__wrapper a {
   width: 12rem;
 }
 .header__wrapper ul {
@@ -611,22 +614,21 @@ p {
 .banner__wrapper .buttons {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   margin-bottom: 3rem;
+  gap: 1rem;
 }
-.banner__wrapper .memberbtn {
+.banner__wrapper .buttons .memberbtn {
   background-color: var(--accent);
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 3rem;
   color: var(--light);
-  height: 6rem;
 }
-.banner__wrapper .memberBtnTrans {
-  padding: 2rem;
+.banner__wrapper .buttons .memberBtnTrans {
+  padding: 1.5rem;
   border-radius: 3rem;
   color: var(--dark);
-  height: 6rem;
-  border-width: 2rem;
-  border-color: var(--accent);
+  border: solid 1px var(--accent);
 }
 .banner__pics {
   display: grid;
@@ -647,10 +649,12 @@ p {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 .counts__list h2, .counts__list p {
   color: var(--light);
-  margin: 0 2rem 0 2rem;
 }
 
 .services__title {
@@ -660,33 +664,38 @@ p {
 }
 .services__wrapper {
   display: flex;
+  overflow: hidden;
   background-color: rgba(182, 181, 181, 0.288);
-  padding: 4rem 4rem;
   border-radius: 5rem;
-  width: -moz-fit-content;
-  width: fit-content;
+  height: 40rem;
 }
 .services__details {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
+  padding: 4rem;
 }
 .services__details h3, .services__details p {
   color: var(--light);
+  margin: 0;
+}
+.services__details h3 {
+  line-height: normal;
+}
+.services__left {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 2rem;
 }
 .services__left .icon {
   background-color: var(--accent);
-  display: inline;
-  padding: 1rem;
-  border-radius: 2rem;
-}
-.services__right {
-  position: absolute;
-  left: 145rem;
+  border-radius: 50%;
+  padding: 0.5rem 1rem;
 }
 .services__right img {
-  height: 40rem;
-  width: 30rem;
+  height: 100%;
+  width: 70rem;
   -o-object-fit: cover;
      object-fit: cover;
 }/*# sourceMappingURL=main.min.css.map */
