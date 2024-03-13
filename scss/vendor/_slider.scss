@@ -1,12 +1,17 @@
 @use '../abstract'  as *;
 
 .tns-controls{
-    @include flex (space-between,center);;
-    margin-bottom: 2rem 0;
-    button {
-        background: transparent;
-        border: none;
-        font-size: 3rem;
-        color: $clr--dark;
+    bottom: 5rem;
+    left: 16.8rem;
+    position: absolute;
+    display: flex;
+    gap:2rem;
+    button { 
+        @include flex (center,center);
+        background-color: $crl--accent;
+        border-radius: 100%;
+        padding: 1rem;
+        font-size: 2rem;
+        color: $clr--light;
     }
 }

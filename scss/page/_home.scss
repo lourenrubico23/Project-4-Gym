@@ -4,14 +4,26 @@
 @use "../layout" as *;
 @use "../vendor" as *;
 
+
+.main__wrapper{
+    width:95%;
+    margin: 0 auto;
+
+    .container{
+        max-width: 160rem;
+        margin: 0 auto;
+    }
+
 .banner{
     &__wrapper{
         background-color: $clr--light;
-        padding: 4rem 4rem;
+        padding: 4rem 9rem;
         border-radius:0 0 5rem 5rem ;
-        padding-bottom: 7rem;
+        padding-bottom: 7rem; 
+
         h1{
             max-width: 60rem;
+            line-height: normal;
         }
         .upper{
             p{
@@ -19,34 +31,47 @@
             }
         }
         .buttons{
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
+            @include flex(flex-end,center);
             margin-bottom: 3rem;
             gap: 1rem;
+            flex-shrink: 0;
             .memberbtn{
+            align-items: end;
             background-color: $crl--accent;
-            padding:1.5rem;
+            padding:1rem;
             border-radius: 3rem;
             color: $clr--light;   
+            
         }
         .memberBtnTrans{
-            padding:1.5rem;
+            padding:1rem;
             border-radius: 3rem;
             color: $clr--dark;   
             border: solid 1px $crl--accent;
         }
-        }
-        
-       
+        }    
     }
    
+    &__details{
+            @include flex(space-between,end);
+        }
      &__pics{
-        @include unevengrid(1fr 1fr, 5rem);
+        display: none;
+        @include mediaQuery{
+             @include unevengrid(1fr 2fr, 5rem);
+        }
+        img{
+            @include imgCover(500px,100%);
+        }
+    }
+        &__right{
+            img{
+                @include imgCover(700px,100%);
+            }
         }
     
     &__left{
-      
+
         p{
             font-size: 2rem;
             margin-top: 2rem;
@@ -59,15 +84,14 @@
 .counts{
     &__wrapper{
         margin-top: 4rem;
-        background-color: rgba(182, 181, 181, 0.288);
-        padding: 4rem 4rem;
-        border-radius: 10rem ;
+        background-color: hsl(0, 0%, 10%);
+        padding: 2rem 9rem;
+        border-radius: 12rem ;
         @include grid(4);
-        @include flex(space-around,center);
+        @include flex(space-between,center);
     }
     &__list{
             h2, p{
-                
                 color: $clr--light;
             }
         }
@@ -77,18 +101,18 @@
     &__title{
         color: $clr--light;
         text-align: center;
-        margin: 7rem 0 5rem 0;
+        margin: 9rem 0 5rem 0;
     }
     &__wrapper{
         display: flex;
         overflow: hidden;
-        background-color: rgba(182, 181, 181, 0.288);
+        background-color: hsl(0, 0%, 10%);
         border-radius: 5rem ;
         height: 40rem;
     }
     &__details{
         @include grid(2);
-        padding: 4rem;
+        padding: 4rem 9rem;
         h3, p{
             color: $clr--light;
             margin: 0;
@@ -101,10 +125,13 @@
     &__left{
         @include flex(start, start);
         gap:2rem;
-            .icon{
+            .icon i{
                 background-color: $crl--accent;
                 border-radius: 50%;
-                padding: .5rem 1rem;
+                width: 4rem;
+                height: 4rem;
+                @include flex(center,center);
+                flex-shrink: 0;
             }
         }
     &__right{
@@ -112,4 +139,119 @@
             @include imgCover(100%, 70rem);
         }
     }
+}
+
+.trainers{
+    margin: 6rem;
+    &__title{
+        padding: 7rem 20rem;
+        h2, p{
+        color: $clr--light;
+        text-align: center;
+        }
+    }
+    &__wrapper{
+        padding: 2rem 9rem;
+        @include grid(3, 7rem);
+    }
+    &__card{
+        position: relative;
+        border-radius: 5rem;
+        overflow: hidden;
+        width: 100%;
+            
+        &__img img{
+            @include imgCover(500px, 100%);
+           
+        }
+        .overlay-text{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                color: $clr--light;
+                text-align: center;
+                background-color: rgba(255, 255, 255, .1);
+                backdrop-filter: blur(5px);
+                padding: 2rem;
+            }
+        }
+}
+
+.testimonial{
+    position: relative;
+    margin-top: 12rem;
+    &__wrapper{
+        padding: 2rem 9rem;
+        @include grid(2, 1rem);
+        background-color: hsl(0, 0%, 10%);
+        border-radius: 5rem;
+        
+    }
+    &__left{
+        
+            color: $clr--light;
+            padding-top: 4rem;
+            h2{
+                line-height: normal;
+            }
+        }
+    &__right{
+        
+        color: $clr--light;
+        padding: 4rem;
+        p{
+            margin-bottom: 3rem;
+        }
+
+        .client{
+            display: flex;
+            gap: 2rem;
+            .name{
+                align-items: center;
+                h3{
+                    margin-bottom: 0;
+                }
+            }
+            img{
+                border-radius: 5rem;
+            }
+        }
+    }  
+}
+
+.member{
+    min-height: 65rem;
+    margin-top: 15rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    img{
+        @include imgCover(50rem, 100%);
+        position: absolute;
+    }
+    &__wrapper{ 
+        position: relative;
+        text-align: center;
+        top: 15rem;
+        left: 0;
+        h2,p{
+            color: $clr--light;
+        }
+        p{
+            margin-bottom: 5rem;
+        }
+        a{
+        background: $crl--accent;
+        border-radius: 4rem;
+        padding: 2rem;
+        width: 12rem;
+        text-align: center;
+        position: relative;
+        color: $clr--light;
+        }
+    }
+    
+}
+
 }

@@ -1,67 +1,59 @@
 @use '../abstract' as *;
 
 .footer{
+     background-color: #000815;
     &__wrapper{
+        margin-top: 25rem;
+        padding: 12rem 9rem;
         @include mediaQuery{
-            @include grid(2, 5rem);
+            @include grid(5, 5rem);
         }
     }
-    &__links{
-        @include mediaQuery{
-             @include flex;
-        gap: 5rem;
-        justify-self: end;
-        li, h4{
-            text-align: right;
+    &__socials{
+        width: 30rem;
+        a{
+            color: $clr--light;
+            font-size: 5rem;
         }
-        li{
-            font-size: 1.4rem;
-            margin-bottom: .5rem;
+        p, i{
+            color: $clr--light;
         }
+        i{
+            width: 3rem;
+            height: 3rem;
+            font-size: 2rem;
+            gap:2rem;
         }
-       
     }
-    &__form{
-        margin-bottom: 2rem;
-        form{
-            position: relative;
-            input{
-                width: 100%;
-                padding: 1rem;
-                border: none;
-                border-bottom: 1px solid  $clr--dark;
-            }
-            button{
-                position: absolute;
-                right: 0;
-                top: 1rem;
-                background: transparent;
-                border: none;
-                text-transform: uppercase;
-            }
-            
+    &__company{
+        color: $clr--light;
+    }
+    &__category{
+        color: $clr--light;
+    }
+    &__contact{
+        color: $clr--light;
+        i{
+           margin-bottom: 1rem;
+           font-size: 1.5rem;
+           display: flex;
+           gap: 2rem;
+           align-items: center;
         }
+    }
+    &__app{
+        color: $clr--light;
+    }
+    &__end{
+        padding: 1rem 9rem;
+        display: flex;
+        justify-content: flex-start;
+        gap: 12rem;
+        color: $clr--light;
         
-    }
-    &__bottom{
-            text-align: center;
-            font-size: 1.2rem;
-            opacity: .4;
-            padding: 0.5rem 0;
-            @include mediaQuery{
-                margin-top: 5rem;
-                @include flex(space-between, center);
-                ul{
-                    @include flex(space-between,center);
-                    gap: 2rem;
-                }
-            }
-
-            ul li:nth-last-child(-n+2) {
-                display: none;
-                @include mediaQuery{
-                    display: block;
-                }
-            }
+            border-top: 2px solid $clr--dark;
+        a{
+            color: $clr--light;
         }
+    }
 }
